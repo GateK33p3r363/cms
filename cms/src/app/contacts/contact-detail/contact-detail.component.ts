@@ -1,12 +1,17 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { Contact } from '../contact-list/contact-list.component'; 
 
 @Component({
   selector: 'app-contact-detail',
-  standalone: true,
-  imports: [],
   templateUrl: './contact-detail.component.html',
-  styleUrl: './contact-detail.component.css'
+  styleUrls: ['./contact-detail.component.css']
 })
-export class ContactDetailComponent {
+export class ContactDetailComponent implements OnInit {
+  contact!: Contact; 
 
+  constructor() {}
+
+  ngOnInit(): void {
+    // Initialize the contact variable or fetch data here
+  }
 }
