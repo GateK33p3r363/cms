@@ -1,4 +1,6 @@
-import { Component } from '@angular/core';
+//import { Component } from '@angular/core';
+import { Component, Output, EventEmitter } from '@angular/core';
+//import { Contact } from './src/app/contacts/contact.model';
 
 export interface Contact {
   id: string;
@@ -15,6 +17,7 @@ export interface Contact {
   styleUrls: ['./contact-list.component.css']
 })
 export class ContactListComponent {
+  //@Output() selectedContactEvent = new EventEmitter<Contact>();
   contacts: Contact[] = [
     {
       id: "1",
@@ -32,10 +35,16 @@ export class ContactListComponent {
       imageUrl: "../../assets/images/barzeer.jpg",
       group: null
     }
+    
   ];
+
+  onSelected(contact: Contact) {
+    //this.selectedContactEvent.emit(contact);
+  }
 
   createNewContact() {
     // Logic for creating a new contact goes here
     console.log('Create new contact clicked');
   }
 }
+

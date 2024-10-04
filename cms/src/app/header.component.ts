@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, EventEmitter, Output } from '@angular/core';
+
 
 @Component({
   selector: 'app-header',
@@ -7,8 +8,12 @@ import { Component } from '@angular/core';
 })
 export class HeaderComponent {
   dropdownOpen = false;
+  @Output() selectedFeatureEvent = new EventEmitter<string>();
 
   toggleDropdown() {
     this.dropdownOpen = !this.dropdownOpen;
   }
+  onSelected(selectedEvent: string) {
+    this.selectedFeatureEvent.emit(selectedEvent);
+}
 }
